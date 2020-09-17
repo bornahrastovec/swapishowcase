@@ -20,20 +20,12 @@
 <script>
 const baseURL = 'https://swapi.dev/api/films/'
 export default {
+    
     data: () => ({
     films: [],
         error: Boolean,
     }),
-    methods: {
-        async callForApi() {
-            let response = await fetch(baseURL);
-            if (response.ok) {
-                this.films = await response.json();
-            } else {
-                this.error = true;
-            }
-        },
-    },
+
     async created() {
             let response = await fetch(baseURL);
             if (response.ok) {
